@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.BisaijiluDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.BisaijiluEntity" id="bisaijiluMap">
+        <result property="bisaimingcheng" column="bisaimingcheng"/>
+        <result property="bisaileixing" column="bisaileixing"/>
+        <result property="bisaitupian" column="bisaitupian"/>
+        <result property="bisairiqi" column="bisairiqi"/>
+        <result property="zhanghao" column="zhanghao"/>
+        <result property="xingming" column="xingming"/>
+        <result property="bisaichengji" column="bisaichengji"/>
+        <result property="bisaijilu" column="bisaijilu"/>
+        <result property="crossuserid" column="crossuserid"/>
+        <result property="crossrefid" column="crossrefid"/>
+        <result property="thumbsupnum" column="thumbsupnum"/>
+        <result property="crazilynum" column="crazilynum"/>
+        <result property="clicktime" column="clicktime"/>
+        <result property="discussnum" column="discussnum"/>
+        <result property="totalscore" column="totalscore"/>
+        <result property="storeupnum" column="storeupnum"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.BisaijiluVO" >
+		SELECT * FROM bisaijilu  bisaijilu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.BisaijiluVO" >
+		SELECT  bisaijilu.* FROM bisaijilu  bisaijilu 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.BisaijiluView" >
+
+		SELECT  bisaijilu.* FROM bisaijilu  bisaijilu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.BisaijiluView" >
+		SELECT * FROM bisaijilu  bisaijilu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>
